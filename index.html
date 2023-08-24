@@ -31,13 +31,13 @@
                 overflow: visible;
             }
 
-            path {
+            .text-dashstroke path {
                 /* animation: path-anim 10s infinite alternate; */
                 stroke-dasharray: 5 4;
                 animation: dash-offset 5s infinite linear;
             }
 
-            text {
+            .text-dashstroke text {
                 font-size: 10px;
                 font-family: sans-serif;
                 font-weight: bold;
@@ -76,7 +76,13 @@
         </style>
     </head>
     <body>
-        <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            class="text-dashstroke"
+            width="200"
+            height="200"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <!-- <path
                 d="M 0 0 L 20 20 L 50 50 L 0 50 C 0 30 10 10 30 30"
                 stroke="green"
