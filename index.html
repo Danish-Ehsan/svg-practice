@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="" />
+
+        <style>
+            html,
+            body {
+                height: 100%;
+                width: 100%;
+            }
+
+            body {
+                background: #383838;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            svg {
+                overflow: visible;
+            }
+
+            path {
+                /* animation: path-anim 10s infinite alternate; */
+                stroke-dasharray: 5 4;
+                animation: dash-offset 5s infinite linear;
+            }
+
+            text {
+                font-size: 10px;
+                font-family: sans-serif;
+                font-weight: bold;
+                text-anchor: middle;
+            }
+
+            @keyframes text-increase {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(1.5);
+                }
+            }
+
+            @keyframes path-anim {
+                0% {
+                    fill: black;
+                }
+                50% {
+                    fill: blue;
+                }
+                100% {
+                    fill: red;
+                }
+            }
+
+            @keyframes dash-offset {
+                0% {
+                    stroke-dashoffset: 0;
+                }
+                100% {
+                    stroke-dashoffset: 100;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <svg width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- <path
+                d="M 0 0 L 20 20 L 50 50 L 0 50 C 0 30 10 10 30 30"
+                stroke="green"
+                stroke-width="3"
+            /> -->
+            <path
+                id="path"
+                d="M 0 50 C 20 20 80 20 100 50"
+                fill="transparent"
+                stroke-width="2"
+                stroke="white"
+                stroke-linecap="round"
+            />
+            <text>
+                <textPath href="#path" startOffset="50%">
+                    This text follows a path
+                    <animate
+                        attributeName="startOffset"
+                        from="-50%"
+                        to="150%"
+                        begin="0s"
+                        dur="5s"
+                        repeatCount="indefinite"
+                    ></animate>
+                </textPath>
+            </text>
+        </svg>
+    </body>
+</html>
