@@ -18,6 +18,8 @@
             body {
                 background: #383838;
                 display: flex;
+                flex-direction: column;
+                gap: 50px;
                 justify-content: center;
                 align-items: center;
                 margin: 0;
@@ -25,6 +27,12 @@
 
             * {
                 box-sizing: border-box;
+            }
+
+            hr {
+                width: 100%;
+                border-style: solid;
+                border-color: #2e2e2e;
             }
 
             svg {
@@ -42,6 +50,20 @@
                 font-family: sans-serif;
                 font-weight: bold;
                 text-anchor: middle;
+            }
+
+            .text-underline text {
+                font-size: 12px;
+                font-family: sans-serif;
+                font-weight: bold;
+                text-anchor: start;
+                fill: #61ba79;
+            }
+
+            .text-underline path {
+                stroke-dasharray: 141 328;
+                animation: moving-underline 5s infinite linear;
+                stroke: #d9bb59;
             }
 
             @keyframes text-increase {
@@ -71,6 +93,15 @@
                 }
                 100% {
                     stroke-dashoffset: 100;
+                }
+            }
+
+            @keyframes moving-underline {
+                0% {
+                    stroke-dashoffset: -331;
+                }
+                100% {
+                    stroke-dashoffset: -784;
                 }
             }
         </style>
@@ -103,6 +134,36 @@
                         attributeName="startOffset"
                         from="-50%"
                         to="150%"
+                        begin="0s"
+                        dur="5s"
+                        repeatCount="indefinite"
+                    ></animate>
+                </textPath>
+            </text>
+        </svg>
+        <hr />
+        <svg
+            class="text-underline"
+            width="400"
+            height="300"
+            viewBox="0 0 300 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                id="path2"
+                d="M 0 100 Q 75 50 150 100 T 300 100"
+                fill="transparent"
+                stroke-width="2"
+                stroke="white"
+                stroke-linecap="round"
+            />
+            <text dominant-baseline="text-bottom">
+                <textPath href="#path2" strokeOffset="-100%">
+                    This text follows a path
+                    <animate
+                        attributeName="startOffset"
+                        from="-43%"
+                        to="100%"
                         begin="0s"
                         dur="5s"
                         repeatCount="indefinite"
