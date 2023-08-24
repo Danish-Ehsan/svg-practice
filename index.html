@@ -22,7 +22,7 @@
                 gap: 50px;
                 justify-content: center;
                 align-items: center;
-                margin: 0;
+                margin: 50px 0;
             }
 
             * {
@@ -66,6 +66,50 @@
                 stroke: #d9bb59;
             }
 
+            .circles circle {
+                fill: transparent;
+                stroke-width: 11;
+                stroke-linecap: butt;
+                stroke-dasharray: 0 500;
+                animation: circle-stroke 3s ease-out forwards;
+            }
+
+            .circles .circle1 {
+                stroke: hsl(32, 90%, 40%);
+            }
+
+            .circles .circle2 {
+                stroke: hsl(32, 90%, 35%);
+            }
+
+            .circles .circle3 {
+                stroke: hsl(32, 90%, 30%);
+            }
+
+            .circles .circle4 {
+                stroke: hsl(32, 90%, 25%);
+            }
+
+            .circles .circle5 {
+                stroke: hsl(32, 90%, 20%);
+                animation-duration: 4s;
+            }
+
+            .circles .circle6 {
+                stroke: hsl(32, 90%, 15%);
+                fill: hsl(32, 90%, 15%);
+                animation-duration: 10s;
+            }
+
+            @keyframes circle-stroke {
+                0% {
+                    stroke-dasharray: 0 500;
+                }
+                100% {
+                    stroke-dasharray: 320 500;
+                }
+            }
+
             @keyframes text-increase {
                 0% {
                     transform: scale(1);
@@ -107,6 +151,21 @@
         </style>
     </head>
     <body>
+        <svg
+            class="circles"
+            width="200"
+            height="200"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <circle class="circle1" r="50" cy="50%" cx="50%" />
+            <circle class="circle2" r="40" cy="50%" cx="50%" />
+            <circle class="circle3" r="30" cy="50%" cx="50%" />
+            <circle class="circle4" r="20" cy="50%" cx="50%" />
+            <circle class="circle5" r="10" cy="50%" cx="50%" />
+            <circle class="circle6" r="3" cy="50%" cx="50%" />
+        </svg>
+        <hr />
         <svg
             class="text-dashstroke"
             width="200"
