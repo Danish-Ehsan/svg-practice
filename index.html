@@ -20,7 +20,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 50px;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 margin: 50px 0;
             }
@@ -33,6 +33,13 @@
                 width: 100%;
                 border-style: solid;
                 border-color: #2e2e2e;
+            }
+
+            code {
+                padding: 5px;
+                background: #2e2e2e;
+                color: white;
+                margin-top: -40px;
             }
 
             svg {
@@ -101,6 +108,29 @@
                 animation-duration: 10s;
             }
 
+            .ellipse {
+                animation: ellipse-squeeze 5s ease-in-out infinite;
+            }
+
+            @keyframes ellipse-squeeze {
+                0% {
+                    rx: 80;
+                    ry: 40;
+                }
+                33% {
+                    rx: 40;
+                    ry: 40;
+                }
+                66% {
+                    rx: 40;
+                    ry: 80;
+                }
+                80% {
+                    rx: 80;
+                    ry: 80;
+                }
+            }
+
             @keyframes circle-stroke {
                 0% {
                     stroke-dasharray: 0 500;
@@ -151,6 +181,17 @@
         </style>
     </head>
     <body>
+        <svg
+            class="circle"
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <ellipse class="ellipse" rx="80" ry="40" cy="50%" cx="50%" />
+        </svg>
+        <code>Only works in Chrome</code>
+        <hr />
         <svg
             class="circles"
             width="200"
