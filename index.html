@@ -78,7 +78,7 @@
                 stroke-width: 11;
                 stroke-linecap: butt;
                 stroke-dasharray: 0 500;
-                animation: circle-stroke 3s ease-out forwards;
+                animation: circle-stroke 4s ease-out infinite alternate;
             }
 
             .circles .circle1 {
@@ -99,13 +99,13 @@
 
             .circles .circle5 {
                 stroke: hsl(32, 90%, 20%);
-                animation-duration: 4s;
+                /* animation-duration: 4s; */
             }
 
             .circles .circle6 {
                 stroke: hsl(32, 90%, 15%);
                 fill: hsl(32, 90%, 15%);
-                animation-duration: 10s;
+                /* animation-duration: 10s; */
             }
 
             .ellipse {
@@ -138,6 +138,9 @@
             @keyframes circle-stroke {
                 0% {
                     stroke-dasharray: 0 500;
+                }
+                80% {
+                    stroke-dasharray: 320 500;
                 }
                 100% {
                     stroke-dasharray: 320 500;
