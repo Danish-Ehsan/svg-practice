@@ -281,6 +281,36 @@
         </svg>
         <hr />
         <svg
+            class="text-underline"
+            width="400"
+            height="300"
+            viewBox="0 0 300 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                id="path2"
+                d="M 0 100 Q 75 50 150 100 T 300 100"
+                fill="transparent"
+                stroke-width="2"
+                stroke="white"
+                stroke-linecap="round"
+            />
+            <text dominant-baseline="text-after-edge">
+                <textPath href="#path2" strokeOffset="-100%">
+                    This text follows a path
+                    <animate
+                        attributeName="startOffset"
+                        from="-43%"
+                        to="100%"
+                        begin="0s"
+                        dur="5s"
+                        repeatCount="indefinite"
+                    ></animate>
+                </textPath>
+            </text>
+        </svg>
+        <hr />
+        <svg
             class="text-dashstroke"
             width="200"
             height="200"
@@ -307,36 +337,6 @@
                         attributeName="startOffset"
                         from="-50%"
                         to="150%"
-                        begin="0s"
-                        dur="5s"
-                        repeatCount="indefinite"
-                    ></animate>
-                </textPath>
-            </text>
-        </svg>
-        <hr />
-        <svg
-            class="text-underline"
-            width="400"
-            height="300"
-            viewBox="0 0 300 200"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <path
-                id="path2"
-                d="M 0 100 Q 75 50 150 100 T 300 100"
-                fill="transparent"
-                stroke-width="2"
-                stroke="white"
-                stroke-linecap="round"
-            />
-            <text dominant-baseline="text-after-edge">
-                <textPath href="#path2" strokeOffset="-100%">
-                    This text follows a path
-                    <animate
-                        attributeName="startOffset"
-                        from="-43%"
-                        to="100%"
                         begin="0s"
                         dur="5s"
                         repeatCount="indefinite"
