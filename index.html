@@ -112,6 +112,30 @@
                 animation: ellipse-squeeze 5s ease-in-out infinite;
             }
 
+            .pattern-rect {
+                transform-origin: 25px 25px;
+            }
+
+            .pattern-rect1 {
+                animation: pattern-rect 10s ease infinite;
+            }
+
+            @keyframes pattern-rect {
+                0%,
+                100% {
+                    transform: scale(1);
+                }
+                25% {
+                    transform: scale(0.5);
+                }
+                50% {
+                    transform: scale(0.5) rotate(180deg);
+                }
+                75% {
+                    transform: scale(1) rotate(180deg);
+                }
+            }
+
             @keyframes ellipse-squeeze {
                 0% {
                     rx: 80;
@@ -188,6 +212,52 @@
         </style>
     </head>
     <body>
+        <svg
+            class="pattern-circle"
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <defs>
+                <pattern id="pattern" x="0" y="0" height="0.25" width="0.25">
+                    <rect
+                        class="pattern-rect pattern-rect1"
+                        width="46"
+                        height="46"
+                        x="2"
+                        y="2"
+                        fill="#f582a0"
+                    />
+                    <rect
+                        class="pattern-rect pattern-rect2"
+                        width="46"
+                        height="46"
+                        x="52"
+                        y="2"
+                        fill="#f582a0"
+                    />
+                    <rect
+                        class="pattern-rect pattern-rect3"
+                        width="46"
+                        height="46"
+                        x="2"
+                        y="52"
+                        fill="#f582a0"
+                    />
+                    <rect
+                        class="pattern-rect pattern-rect4"
+                        width="46"
+                        height="46"
+                        x="52"
+                        y="52"
+                        fill="#f582a0"
+                    />
+                </pattern>
+            </defs>
+            <rect fill="url(#pattern)" width="200" height="200" />
+        </svg>
+        <hr />
         <svg
             class="moving-gradient"
             width="200"
