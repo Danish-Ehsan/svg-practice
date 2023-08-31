@@ -120,6 +120,26 @@
                 animation: pattern-rect 10s ease infinite;
             }
 
+            .pattern-border-circle {
+                animation: pattern-circle 4s ease infinite alternate;
+            }
+
+            @keyframes pattern-circle {
+                0%,
+                100% {
+                    transform: translate(0, 0);
+                }
+                25% {
+                    transform: translate(14px, 0);
+                }
+                50% {
+                    transform: translate(14px, 14px);
+                }
+                75% {
+                    transform: translate(0, 14px);
+                }
+            }
+
             @keyframes pattern-rect {
                 0%,
                 100% {
@@ -220,6 +240,35 @@
     <body>
         <svg
             class="pattern-circle"
+            width="200"
+            height="200"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <defs>
+                <pattern id="pattern-border" x="0" y="0" height="0.1" width="0.1">
+                    <circle class="pattern-border-circle" cx="3" cy="3" r="3" />
+                </pattern>
+            </defs>
+            <!-- <circle
+                cx="100"
+                cy="100"
+                r="100"
+                fill="transparent"
+                stroke="url(#pattern-border)"
+                stroke-width="10"
+            /> -->
+            <rect
+                width="200"
+                height="200"
+                fill="transparent"
+                stroke="url(#pattern-border)"
+                stroke-width="12"
+            />
+        </svg>
+        <hr />
+        <svg
+            class="pattern-rect"
             width="200"
             height="200"
             viewBox="0 0 200 200"
